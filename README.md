@@ -5,9 +5,7 @@ This project is build using TestNG framework with gradle.
 
 ### Prerequisites
 - Make sure JAVA_HOME is set correctly for your mac
-- Make sure below two test accounts added into the database, as these are used in tests.
-  - rohith.vitta@rungway.com
-  - editUser@rungway.com
+
 - Update the above test user accounts in the dev.properties, local.properties and staging.properties files    
 
 ### Download repository
