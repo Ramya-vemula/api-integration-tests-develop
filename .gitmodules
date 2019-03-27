@@ -1,0 +1,3 @@
+[submodule "codeQuality"]
+    path = codeQuality
+    url = git@github.com:tissl/code-quality.git

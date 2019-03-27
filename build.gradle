@@ -1,0 +1,56 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+
+group = 'api-integration-tests'
+version = '1.0-SNAPSHOT'
+
+description = """"""
+
+sourceCompatibility = 1.8
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "io.qameta.allure:allure-gradle:2.5"
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+
+    maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+apply plugin: 'io.qameta.allure'
+
+allure {
+    autoconfigure = true
+    version = '2.4.1'
+}
+
+dependencies {
+    testCompile 'io.rest-assured:rest-assured:3.2.0'
+    compile 'io.rest-assured:json-path:3.2.0'
+    testCompile 'io.rest-assured:json-schema-validator:3.2.0'
+    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+    compile "org.projectlombok:lombok:1.16.20"
+    testCompile group: 'org.slf4j', name: 'slf4j-nop', version: '1.8.0-beta2'
+
+
+
+    compileOnly 'com.google.code.findbugs:annotations:3.0.1'
+    compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+}
+
+apply from: 'codeQuality/codeCheck.gradle'
+
+test {
+    useTestNG() {
+        useDefaultListeners = true
+        suites "testng.xml"
+    }
+}

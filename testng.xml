@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="api-integration-tests" verbose="1">
+    <test name="Regression1">
+        <packages>
+            <package name="com.tissl.api.accountService"/>
+            <package name="com.tissl.api.tisslService"/>
+            <package name="com.tissl.api.profileService"/>
+            <package name="com.tissl.api.authService"/>
+            <package name="com.tissl.api.responseService"/>
+            <package name="com.tissl.api.discussionsService"/>
+        </packages>
+    </test>
+</suite>
